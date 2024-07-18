@@ -4,6 +4,7 @@ package auth;
 
 option go_package = "user.sso.v1;ssov1";
 
+// Auth is service for managing permissions and roles.
 service Auth {
     rpc Register (RegisterRequest) returns (RegisterResponse);
     rpc Login (LoginRequest) returns (LoginResponse);
@@ -22,7 +23,7 @@ message RegisterResponse {
 message LoginRequest {
     string email = 1; // Email of the user to login.
     string password = 2; // Password of the user to login.
-    string app_id = 3; // App ID of the app to login to.
+    int32 app_id = 3; // App ID of the app to login to.
 }
 
 message LoginResponse {
